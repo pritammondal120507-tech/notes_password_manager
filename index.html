@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div id="vault-overlay" class="app-lock">
+  <div class="card" style="width: 320px; text-align: center;">
+    <h2 id="lock-title">Vault Locked</h2>
+    <p id="lock-desc" style="color: var(--text-dim); margin-bottom: 20px;">Enter your Master Key to access</p>
+    <input type="password" id="vault-password" placeholder="Password">
+    <button class="btn-primary" onclick="vaultAuth()">Submit</button>
+  </div>
+</div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  
+  <div class="container">
+    <header>
+      <div class="logo-area">
+        <span class="logo-icon">🔐</span>
+        <h1>Incognito<span> VAULT</span></h1>
+      </div>
+      <p class="subtitle">Client-Side Encryption</p>
+      <a href="indexxx.html">Click here to visit Media Store Page</a>
+    </header>
+
+    <main class="grid-layout">
+      <section class="card note-form glow-hover">
+        <div class="card-header">
+          <h2>Create Secret</h2>
+          <div class="status-dot"></div>
+        </div>
+        <div class="input-group">
+          <input type="text" id="title" placeholder="Note Title" autocomplete="off">
+          <textarea id="content" placeholder="Sensitive information..."></textarea>
+          <div class="password-wrapper">
+            <input type="password" id="password" placeholder="Encryption Key">
+          </div>
+          <button class="btn-primary" onclick="saveNote()">
+            <span>Encrypt & Save</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="card notes-list">
+        <div class="list-header">
+          <h2>Your Vault</h2>
+          <div class="search-wrapper">
+            <input type="text" id="search" placeholder="Search..." onkeyup="filterNotes()">
+          </div>
+        </div>
+        <ul id="notes-list"></ul>
+      </section>
+    </main>
+    
+    <div id="decrypt-section" class="modal" style="display:none;">
+      <div class="modal-content card">
+        <span class="close-btn" onclick="closeDecrypt()">×</span>
+        <h2>Unlock Secret</h2>
+        <div class="modal-body">
+          <p id="note-title-display"></p>
+          <input type="password" id="decrypt-password" placeholder="Enter Master Key">
+          <button class="btn-primary" onclick="decryptNote()">Decrypt Now</button>
+          <div id="decrypted-content-box" class="result-box" style="display:none;">
+            <p id="decrypted-content"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="app.js"></script>
+</body>

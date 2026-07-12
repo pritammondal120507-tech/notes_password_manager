@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Incognito Media Vault | Premium Security & Media</title>
+    <!-- Google Fonts for Luxury Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleee.css">
+</head>
+<body>
+    <div class="background-glows">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+    </div>
+    <!-- Royal Security Lock Screen -->
+<div id="lock-screen" class="lock-screen">
+    <div class="lock-box glass-card">
+        <div class="lock-shield">👑</div>
+        <h2>VAULT LOCKED</h2>
+        <p>Enter Master Authorization Code</p>
+        
+        <div class="pin-input-container">
+            <input type="password" id="vault-pin" maxlength="4" placeholder="••••" autocomplete="off">
+        </div>
+        
+        <button id="unlock-btn" class="royal-btn">AUTHORIZE ACCESS</button>
+        <p id="lock-error" class="error-msg"></p>
+    </div>
+</div>
+    <div class="container">
+        <header>
+            <h1 class="royal-title">The Incognito Media Vault</h1>
+            <p class="royal-subtitle">Secure Notes, Credentials & High-Fidelity Media</p>
+            <a href="index.html">Click here to Go Incognito Vault</a>
+        </header>
+        
+        <!-- Premium Form Section -->
+        <div class="vault-panel luxury-form">
+            <h2 class="section-title"> New Entry</h2>
+            
+            <div class="input-group">
+                <input type="text" id="title" required placeholder=" ">
+                <label>Entry Title / Alias</label>
+                <div class="input-border"></div>
+            </div>
+
+            <div class="input-group">
+                <textarea id="content" required placeholder=" "></textarea>
+                <label>Secret Payload / Note Details</label>
+                <div class="input-border"></div>
+            </div>
+            
+            <div class="media-upload-wrapper">
+                <label for="media-input" class="luxury-upload-btn">
+                    <span class="upload-icon">✦</span> Attach Media
+                </label>
+                <input type="file" id="media-input" accept="image/*, audio/*, video/*">
+                <div id="file-name" class="file-status">No file secured</div>
+            </div>
+            
+            <button id="save-btn" class="royal-btn">Commit to Vault</button>
+        </div>
+        <!-- Display Section -->
+        <div class="entries-section">
+            <h2 class="section-title">Archived</h2>
+            <div id="entries-container" class="grid-layout"></div>
+        </div>
+    </div>
+
+    <script src="apppm.js"></script>
+</body>
+</html>
